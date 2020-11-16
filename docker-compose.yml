@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:  
+    frontend:
+        image: corrykalam/jenkins-frontend-project:main
+        container_name: frontend-vue
+        ports:
+            - 8080:8080
+            - 80:80
+        
+networks:
+    default:
+        external:
+            name: backend_deploy
