@@ -1,5 +1,5 @@
 ## NODE Config
-FROM node:12.4.0-alpine as builder
+FROM node:12.19.0-alpine as builder
 
 WORKDIR /app
 COPY package*.json ./
