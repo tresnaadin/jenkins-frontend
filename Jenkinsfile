@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     CommitHash = sh (script : "git log -n 1 --pretty=format:'%H'", returnStdout: true)
-                    builderDocker = docker.build("corrykalam/jenkins-frontend-project:${CommitHash}")
+                    builderDocker = docker.build("tresnaadin/jenkins-frontend:${CommitHash}")
                 }
             }
         }
@@ -60,7 +60,7 @@ pipeline {
                     sshPublisher(
                         publishers: [
                             sshPublisherDesc(
-                                configName: 'db-center',
+                                configName: 'dev-server',
                                 verbose: false,
                                 transfers: [
                                     sshTransfer(
